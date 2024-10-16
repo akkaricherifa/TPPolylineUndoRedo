@@ -177,3 +177,30 @@ const undoButton = document.getElementById("undo");
 undoButton.addEventListener("click", () => {
     
 });
+
+
+//// classe command
+class Command {
+    execute(){
+    }
+
+    undo(){
+    }
+
+}
+
+class concreteCommand extends Command {
+    constructor(line, layer) {
+        super();
+        this.line = line;
+        this.layer = layer;
+    }
+    execute() {
+        this.layer.add(this.line)
+
+    }
+    undo(){
+        this.line.remove();
+    }
+
+}
